@@ -32,8 +32,24 @@ function Card() {
     </div>
   )
 }
+
+let currentPlayer = 'X';
+
 function Square() {
+  const [ turn, setTurn ] = useState(null);
+
+  const handleClick = () => {
+    if (turn) return
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    setTurn(currentPlayer);
+  }
+
   return (
-    <button className={styles['square-btn']}>X</button>
+    <button
+      className={styles['square-btn']}
+      onClick={handleClick}
+      >
+        {turn}
+    </button>
   )
 }
