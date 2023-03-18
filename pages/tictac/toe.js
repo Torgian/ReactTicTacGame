@@ -13,14 +13,14 @@ export default function ticTacText() {
 
 function Board() {
   const [ squares, setSquares ] = useState(Array(9).fill(null))
-
-  let currentTurn = 'X';
+  const [ turnIsX, setTurn ] = useState(true)
 
   function handleClick(i) {
     if (squares[i]) return
     const nextSquares = squares.slice()
-    nextSquares[i] = currentTurn
+    nextSquares[i] = turnIsX ? 'X' : 'O'
     setSquares(nextSquares)
+    setTurn(!turnIsX)
   }
 
   return (
