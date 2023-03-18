@@ -6,12 +6,12 @@ export default function ticTacText() {
     <>
       <h1>Welcome To TicTacToe</h1>
 
-      <Card></Card>
+      <Board></Board>
     </>
   )
 }
 
-function Card() {
+function Board() {
   return (
     <div className={`${styles.card} ${styles['text-center']}`}>
       <div className={styles.row}>
